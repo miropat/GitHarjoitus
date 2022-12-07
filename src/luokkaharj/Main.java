@@ -20,9 +20,15 @@ class Televisio {
 	//toiminnot
 	public void Startup() {
 		System.out.println("TV käynnistyy");
-		
 	}
 	public void shutDown() {
+		System.out.println("TV sammuu");
+	}
+	public void changeChannel(String suunta) {
 		
+			System.out.println("Kanava" + suunta);
+	}
+	public void netflix() {
+		System.out.println("Opening netflix");
 	}
 }
