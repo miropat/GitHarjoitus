@@ -25,19 +25,26 @@ public class Main {
 		Televisio tv2 = new Televisio();
 		
 		//Annetaan arvot
-		tv1.merkki = "Toosa";
-		tv1.malli = "putkitv";
-		tv1.koko = 23;
-		tv1.kuvanLaatu = "1/10K";
-		tv1.omistaja ="Patu";
+		tv2.merkki = "Toosa";
+		tv2.malli = "putkitv";
+		tv2.koko = 23;
+		tv2.kuvanLaatu = "1/10K";
+		tv2.omistaja ="Patu";
 		
-		System.out.println(tv2.merkki);
-		tv1.startUp();
+		
+		tv2.tulostaTiedot();
+		
+		Televisio tv3 = new Televisio("Sony", "LCD40", 40, "1K", "Jansku");
+		
+		tv3.muutaTiedot("LG", "LCD50", 50);
+		
+		tv3.tulostaTiedot();
 	}
 
 }
 
 class Televisio {
+	
 	//ominaisuudet
 	String merkki;
 	String malli;
@@ -63,4 +70,36 @@ class Televisio {
 	private void omistaja() {
 		System.out.println("omistaja on "+omistaja);
 	}
+	
+	//tulosta tiedot metodi
+	public void tulostaTiedot() {
+		System.out.println("merkki: " +merkki);
+		System.out.println("malli: " +malli);
+		System.out.println("koko: " +koko);
+		System.out.println("kuvan laatu: " +kuvanLaatu);
+	}
+	
+	//muuta tiedot metodi
+	public void muutaTiedot(String merkki, String malli, int koko) {
+		this.merkki = merkki;
+		this.malli = malli;
+		this.koko = koko;
+	}
+	
+	//Constructor 
+	public Televisio () {
+		merkki="";
+		malli="";
+		koko=0;
+		kuvanLaatu="";
+		omistaja="";
+	}
+	public Televisio (String brand, String model, int size, String picquality, String owner) {
+		merkki = brand;
+		malli = model;
+		koko = size;
+		kuvanLaatu = picquality;
+		omistaja = owner;
+	}
 }
+
